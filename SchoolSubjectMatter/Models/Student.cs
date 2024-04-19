@@ -1,6 +1,26 @@
-﻿namespace SchoolSubjectMatter.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SchoolSubjectMatter.Models
 {
     public class Student
     {
+        public int Id { get; set; }
+
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
+        [Range(6, 120)]
+        public int Age { get; set; }
+
+        public string Address { get; set; }
+
+
+        public List<Subject> Subjects { get; set; } = new List<Subject>();
+
+        public List<Mark> Marks { get; set; } = new List<Mark>();
+
     }
 }
