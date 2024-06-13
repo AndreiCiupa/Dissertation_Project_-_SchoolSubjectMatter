@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SchoolSubjectMatter.Data;
 
@@ -11,9 +12,11 @@ using SchoolSubjectMatter.Data;
 namespace SchoolSubjectMatter.Migrations
 {
     [DbContext(typeof(SchoolSubjectMatterContext))]
-    partial class SchoolSubjectMatterContextModelSnapshot : ModelSnapshot
+    [Migration("20240613114814_UpdateRelationships")]
+    partial class UpdateRelationships
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -14,6 +14,8 @@ namespace SchoolSubjectMatter.Models
 
         public string Address { get; set; }
 
+        public string Email { get; set; }
+
 
         public List<Subject> Subjects { get; set; } = new List<Subject>();
 

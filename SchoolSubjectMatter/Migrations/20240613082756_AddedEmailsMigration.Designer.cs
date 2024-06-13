@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SchoolSubjectMatter.Data;
 
@@ -11,9 +12,11 @@ using SchoolSubjectMatter.Data;
 namespace SchoolSubjectMatter.Migrations
 {
     [DbContext(typeof(SchoolSubjectMatterContext))]
-    partial class SchoolSubjectMatterContextModelSnapshot : ModelSnapshot
+    [Migration("20240613082756_AddedEmailsMigration")]
+    partial class AddedEmailsMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -151,7 +154,7 @@ namespace SchoolSubjectMatter.Migrations
 
                     b.HasIndex("SubjectsId");
 
-                    b.ToTable("StudentSubjects", (string)null);
+                    b.ToTable("StudentSubject");
                 });
 
             modelBuilder.Entity("SubjectTeacher", b =>
@@ -166,7 +169,7 @@ namespace SchoolSubjectMatter.Migrations
 
                     b.HasIndex("TeachersId");
 
-                    b.ToTable("TeacherSubjects", (string)null);
+                    b.ToTable("SubjectTeacher");
                 });
 
             modelBuilder.Entity("SchoolSubjectMatter.Models.Mark", b =>
